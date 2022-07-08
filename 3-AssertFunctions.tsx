@@ -1,18 +1,12 @@
-import { AssertionError } from "assert";
-
 function assertIsNumber(value: any): asserts value is number {
 	if (typeof value !== "number") {
-		throw new AssertionError({
-			message: `Expected ${value} to be a number.`,
-		});
+		throw new Error(`Expected ${value} to be a number.`);
 	}
 };
 
-const assertIsNumberBroken = (value: any): asserts value is number  => {
+const assertIsNumberBroken: (value: any) => asserts value is number = (value: any): asserts value is number  => {
 	if (typeof value !== "number") {
-		throw new AssertionError({
-			message: `Expected ${value} to be a number.`,
-		});
+		throw new Error(`Expected ${value} to be a number.`);
 	}
 };
 
